@@ -32,8 +32,9 @@ KnowledgeOps AI provides a single search interface where users can ask questions
 
 ### AI
 - OpenAI
+- Embeddings
 - Retrieval-Augmented Generation (RAG)
 
 ## Status
 
-🚧 Currently in Phase 0 — Product Discovery & Architecture.
+ Currently in Phase 0 — Product Discovery & Architecture.
