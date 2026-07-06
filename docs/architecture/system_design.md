@@ -106,7 +106,7 @@ Columns:
 - comment
 - created_at
 
-### usage_logs = deferred to Phase 7 Observability
+### usage_logs deferred to Phase 7 Observability
 Stores system-level usage data, API activity, latency, token usage, cost, and errors.
 
 Columns:
@@ -122,7 +122,7 @@ Columns:
 - estimated_cost
 - error_message
 - created_at
-```
+
 ### Authentication
 
 #### POST /auth/register
