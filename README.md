@@ -37,4 +37,26 @@ KnowledgeOps AI provides a single search interface where users can ask questions
 
 ## Status
 
- Currently in Phase 0 — Product Discovery & Architecture.
+## Backend Progress
+
+### Phase 1 — Backend Foundation
+
+Completed:
+- Created FastAPI application entry point
+- Added `/health` endpoint
+- Verified backend runs locally with Uvicorn
+- Verified Swagger API docs at `/docs`
+
+Run backend locally:
+
+```bash
+cd backend
+uvicorn app.main:app --reload
+
+Health check:
+
+http://127.0.0.1:8000/health
+
+Swagger docs:
+
+http://127.0.0.1:8000/docs
