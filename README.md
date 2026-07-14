@@ -173,6 +173,10 @@ Completed
 - Pydantic
 - Request Validation
 - Basic REST API Design
+- Added centralized configuration using `pydantic-settings`
+- Created reusable `Settings` configuration object
+- Moved app name, version, and environment out of `main.py`
+- Added safe configuration placeholders to `.env.example`
 
 Upcoming
 
