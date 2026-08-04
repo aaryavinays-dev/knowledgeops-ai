@@ -3,11 +3,11 @@ from time import perf_counter
 from uuid import uuid4
 
 from fastapi import FastAPI, Request
-from fastapi import FastAPI
-
 from app.core.config import settings
 from app.core.logging import configure_logging
 from app.schemas.query import TestQueryRequest, TestQueryResponse
+from app.core.exception_handlers import app_exception_handler
+from app.core.exceptions import AppException, DocumentNotFoundException
 
 
 configure_logging()
@@ -19,7 +19,13 @@ app = FastAPI(
     version=settings.APP_VERSION,
 )
 
+app.add_exception_handler(
+    AppException,
+    app_exception_handler,
+)
+
 logger.info("KnowledgeOps AI backend initialized")
+
 @app.middleware("http")
 async def request_tracking_middleware(request: Request, call_next):
     request_id = str(uuid4())
@@ -81,3 +87,10 @@ def test_query(request: TestQueryRequest):
         "status": "accepted",
         "message": "Query received successfully",
     }
+
+@app.get("/test-error/{document_id}")
+def test_error(document_id: int):
+    raise DocumentNotFoundException(
+        document_id=document_id,
+    )
+
